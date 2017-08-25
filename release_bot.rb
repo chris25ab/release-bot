@@ -14,7 +14,7 @@ class ReleaseBot < SlackRubyBot::Bot
   end
 
   command 'get_releases' do |client, data, match|
-    response = HTTParty.get('http://api/1/misc/current_releases')
+    response = HTTParty.get('https://dealer360.stage.nnanet.com/api/1/misc/current_releases')
     client.say(text: response.body || "We couldn't connect to the server", channel: data.channel)
   end
 end
